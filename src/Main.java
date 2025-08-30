@@ -37,9 +37,6 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         main.log.makeFile();
-        main.log.append("#######################################################");
-        main.log.append("####################PROGRAM-STARTED####################");
-        main.log.append("#######################################################");
 
         main.log.append("MADE BY FEDI6431");
 
