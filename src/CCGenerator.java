@@ -131,7 +131,7 @@ public class CCGenerator {
         // Generate pin
         pin = rand.nextInt(0, 10000);
         // Generate expiry moth
-        expiryMonth = rand.nextInt(0,12);
+        expiryMonth = rand.nextInt(1,12);
         // Generate expiry year
         expiryYear = Year.now().getValue() + rand.nextInt(1,6);
         // Generate a number from 3 to 6 assign it to the MII variable (Major Industry Identifier)
