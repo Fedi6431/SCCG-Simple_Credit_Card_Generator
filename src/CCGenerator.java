@@ -1,4 +1,3 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedWriter;
@@ -48,13 +47,6 @@ public class CCGenerator {
         frame.setResizable(false);
         frame.setSize(500, 300);
         frame.setLocationRelativeTo(null);
-
-        try {
-            Image image = ImageIO.read(new File("img/ccc.png"));
-            frame.setIconImage(image);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
         // Title
         JLabel titleLabel = new JLabel("Credit Card Generator", SwingConstants.CENTER);
