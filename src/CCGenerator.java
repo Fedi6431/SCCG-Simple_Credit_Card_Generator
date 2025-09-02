@@ -97,7 +97,13 @@ public class CCGenerator {
         JButton generateButton = new JButton("Generate");
         generateButton.setBounds(200, 150, 100, 30);
         generateButton.addActionListener(e -> {
+            // Other info frame
+            miiField.setText(String.format("%04d", MII));
+            typeField.setText(type);
+            binField.setText(String.format("%04d", BINumber));
+            accountNumberField.setText(accountNumber);
             generateCard();
+            // Main frame
             cardNumberField.setText(card);
             pinField.setText(String.format("%04d", pin));
             expiryDateField.setText(expiryMonth + "/" + expiryYear);
@@ -132,30 +138,30 @@ public class CCGenerator {
 
         // MII
         JLabel miiLabel = new JLabel("MII:");
-        miiLabel.setBounds(60, 10, 100, 25);
+        miiLabel.setBounds(120, 10, 100, 25);
         miiField = new JTextField();
-        miiField.setBounds(100, 10, 100, 25);
+        miiField.setBounds(150, 10, 150, 25);
         miiField.setEditable(false);
 
         // TYPE
         JLabel cardTypeLabel = new JLabel("Card Type:");
-        cardTypeLabel.setBounds(20, 40, 100, 25);
+        cardTypeLabel.setBounds(80, 40, 100, 25);
         typeField = new JTextField();
-        typeField.setBounds(100, 40, 100, 25);
+        typeField.setBounds(150, 40, 150, 25);
         typeField.setEditable(false);
 
         // BIN
         JLabel BILabel = new JLabel("BIN:");
-        BILabel.setBounds(60, 70, 100, 25);
+        BILabel.setBounds(120, 70, 100, 25);
         binField = new JTextField();
-        binField.setBounds(100, 70, 100, 25);
+        binField.setBounds(150, 70, 150, 25);
         binField.setEditable(false);
 
         // Account number
         JLabel AccountNumberLabel = new JLabel("Account Number:");
-        AccountNumberLabel.setBounds(0, 100, 100, 25);
+        AccountNumberLabel.setBounds(45, 100, 100, 25);
         accountNumberField = new JTextField();
-        accountNumberField.setBounds(100, 100, 100, 25);
+        accountNumberField.setBounds(150, 100, 150, 25);
         accountNumberField.setEditable(false);
 
         info.add(miiLabel);
@@ -184,7 +190,7 @@ public class CCGenerator {
         // Generate pin
         pin = rand.nextInt(0, 10000);
         // Generate expiry moth
-        expiryMonth = rand.nextInt(1,12);
+        expiryMonth = rand.nextInt(1,13);
         // Generate expiry year
         expiryYear = Year.now().getValue() + rand.nextInt(1,6);
         // Generate a number from 3 to 6 assign it to the MII variable (Major Industry Identifier)
