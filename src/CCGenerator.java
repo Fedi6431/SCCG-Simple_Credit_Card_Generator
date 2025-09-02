@@ -20,6 +20,10 @@ public class CCGenerator {
     private JTextField pinField;
     private JTextField expiryDateField;
     private JTextField cfcField;
+    private JTextField miiField;
+    private JTextField typeField;
+    private JTextField binField;
+    private JTextField accountNumberField;
 
     // CC information
     public int MII = 0;
@@ -81,6 +85,14 @@ public class CCGenerator {
         cfcField.setBounds(120, 110, 100, 25);
         cfcField.setEditable(false);
 
+        // Other info Button
+        JButton otherInformationButton = new JButton("Other Info");
+        otherInformationButton.setBounds(340, 225, 80, 15);
+        otherInformationButton.setFont(new Font("Arial", Font.BOLD, 8));
+        otherInformationButton.addActionListener(e -> {
+            createOtherInfoWindow();
+        });
+
         // Generate Button
         JButton generateButton = new JButton("Generate");
         generateButton.setBounds(200, 150, 100, 30);
@@ -104,8 +116,57 @@ public class CCGenerator {
         frame.add(cfcLabel);
         frame.add(cfcField);
         frame.add(generateButton);
+        frame.add(otherInformationButton);
 
         frame.setVisible(true);
+    }
+
+    public void createOtherInfoWindow() {
+        JFrame info = new JFrame();
+        info.setTitle("Other Information");
+        info.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        info.setResizable(false);
+        info.setSize(400, 200);
+        info.setLocationRelativeTo(null);
+        info.setLayout(null); // Set layout to null for absolute positioning
+
+        // MII
+        JLabel miiLabel = new JLabel("MII:");
+        miiLabel.setBounds(60, 10, 100, 25);
+        miiField = new JTextField();
+        miiField.setBounds(100, 10, 100, 25);
+        miiField.setEditable(false);
+
+        // TYPE
+        JLabel cardTypeLabel = new JLabel("Card Type:");
+        cardTypeLabel.setBounds(20, 40, 100, 25);
+        typeField = new JTextField();
+        typeField.setBounds(100, 40, 100, 25);
+        typeField.setEditable(false);
+
+        // BIN
+        JLabel BILabel = new JLabel("BIN:");
+        BILabel.setBounds(60, 70, 100, 25);
+        binField = new JTextField();
+        binField.setBounds(100, 70, 100, 25);
+        binField.setEditable(false);
+
+        // Account number
+        JLabel AccountNumberLabel = new JLabel("Account Number:");
+        AccountNumberLabel.setBounds(0, 100, 100, 25);
+        accountNumberField = new JTextField();
+        accountNumberField.setBounds(100, 100, 100, 25);
+        accountNumberField.setEditable(false);
+
+        info.add(miiLabel);
+        info.add(miiField);
+        info.add(cardTypeLabel);
+        info.add(typeField);
+        info.add(BILabel);
+        info.add(binField);
+        info.add(AccountNumberLabel);
+        info.add(accountNumberField);
+        info.setVisible(true);
     }
 
     // Set type function
